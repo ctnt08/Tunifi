@@ -1,6 +1,4 @@
 
-<img src="https://github.com/anandnet/Harmony-Music/blob/main/cover.png" width="1200" >
-
 # Harmony Music
 A cross platform app for music streaming made with Flutter(Android, Windows, linux).
 
