@@ -656,8 +656,8 @@ class SettingsScreen extends StatelessWidget {
                   ListTile(
                     contentPadding: const EdgeInsets.only(left: 5, right: 10),
                     title: Text("github".tr),
-                    subtitle: Text(
-                      "${"githubDes".tr}${((Get.find<PlayerController>().playerPanelMinHeight.value) == 0 || !isBottomNavActive) ? "" : "\n\n${settingsController.currentVersion} ${"by".tr} anandnet"}",
+                      subtitle: Text(
+                      "${"githubDes".tr}${((Get.find<PlayerController>().playerPanelMinHeight.value) == 0 || !isBottomNavActive) ? "" : "\n\n${settingsController.currentVersion} ${"by".tr} Tommy Namuche"}",
                       style: Theme.of(context).textTheme.bodyMedium,
                     ),
                     isThreeLine: true,
@@ -675,10 +675,15 @@ class SettingsScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          "Harmony Music",
+                          "Bombarden TECSUP",
+                          style: Theme.of(context).textTheme.titleMedium,
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          "Tunify",
                           style: Theme.of(context).textTheme.titleLarge,
                         ),
-                        Text(settingsController.currentVersion,
+                        Text("${settingsController.currentVersion}",
                             style: Theme.of(context).textTheme.titleMedium)
                       ],
                     ),
@@ -690,7 +695,7 @@ class SettingsScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 20.0),
             child: Text(
-              "${settingsController.currentVersion} ${"by".tr} anandnet",
+              "${settingsController.currentVersion} ${"by".tr} Tommy Namuche",
               style: Theme.of(context).textTheme.bodySmall,
             ),
           ),

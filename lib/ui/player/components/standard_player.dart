@@ -100,8 +100,23 @@ class StandardPlayer extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.only(top: 40),
                           child: Center(
-                            child: AlbumArtNLyrics(
-                              playerArtImageSize: size.width * .29,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                boxShadow: const [
+                                  BoxShadow(
+                                    color: Colors.black26,
+                                    blurRadius: 20,
+                                    offset: Offset(0, 12),
+                                  ),
+                                ],
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: AlbumArtNLyrics(
+                                  playerArtImageSize: size.width * .29,
+                                ),
+                              ),
                             ),
                           ),
                         ),
@@ -156,8 +171,22 @@ class StandardPlayer extends StatelessWidget {
                       padding: EdgeInsets.only(
                           bottom: 80 + Get.mediaQuery.padding.bottom),
                       child: Container(
-                          constraints: const BoxConstraints(maxWidth: 500),
-                          child: const PlayerControlWidget()),
+                        constraints: const BoxConstraints(maxWidth: 500),
+                        decoration: BoxDecoration(
+                          color: Colors.black.withOpacity(0.35),
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.black38,
+                              blurRadius: 18,
+                              offset: Offset(0, 10),
+                            ),
+                          ],
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 16, vertical: 12),
+                        child: const PlayerControlWidget(),
+                      ),
                     )
                   ],
                 ),

@@ -122,9 +122,20 @@ class Body extends StatelessWidget {
     final leftPadding =
         settingsScreenController.isBottomNavBarEnabled.isTrue ? 20.0 : 5.0;
     if (homeScreenController.tabIndex.value == 0) {
-      return Padding(
-        padding: EdgeInsets.only(left: leftPadding),
-        child: Stack(
+      return Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Theme.of(context).colorScheme.background,
+              Theme.of(context).canvasColor,
+            ],
+          ),
+        ),
+        child: Padding(
+          padding: EdgeInsets.only(left: leftPadding),
+          child: Stack(
           children: [
             GestureDetector(
               onTap: () {
@@ -216,10 +227,26 @@ class Body extends StatelessWidget {
                               ]
                             : [const HomeShimmer()];
                         return ListView.builder(
-                          padding:
-                              EdgeInsets.only(bottom: 200, top: topPadding),
+                          padding: EdgeInsets.only(
+                              bottom: 200, top: topPadding, right: 10),
                           itemCount: items.length,
-                          itemBuilder: (context, index) => items[index],
+                          itemBuilder: (context, index) => Container(
+                                margin: const EdgeInsets.only(bottom: 16),
+                                decoration: BoxDecoration(
+                                  color: Theme.of(context).cardColor,
+                                  borderRadius: BorderRadius.circular(16),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.06),
+                                      blurRadius: 12,
+                                      offset: const Offset(0, 6),
+                                    )
+                                  ],
+                                ),
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 12, vertical: 8),
+                                child: items[index],
+                              ),
                         );
                       }),
               ),
@@ -240,6 +267,7 @@ class Body extends StatelessWidget {
               )
           ],
         ),
+      ),
       );
     } else if (homeScreenController.tabIndex.value == 1) {
       return settingsScreenController.isBottomNavBarEnabled.isTrue
