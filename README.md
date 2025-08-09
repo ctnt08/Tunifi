@@ -1,5 +1,5 @@
 
-# Harmony Music
+# tunify
 A cross platform app for music streaming made with Flutter(Android, Windows, linux).
 
 # Features
